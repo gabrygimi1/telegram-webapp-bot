@@ -3,15 +3,21 @@ import { Telegraf } from "telegraf";
 const BOT_TOKEN = process.env.BOT_TOKEN;
 const WEBAPP_URL = process.env.WEBAPP_URL;
 
-if (!BOT_TOKEN) throw new Error("BOT_TOKEN mancante nelle variabili Render!");
-if (!WEBAPP_URL) throw new Error("WEBAPP_URL mancante!");
+if (!BOT_TOKEN) {
+    console.error("❌ BOT_TOKEN mancante!");
+    process.exit(1);
+}
+
+if (!WEBAPP_URL) {
+    console.error("❌ WEBAPP_URL mancante!");
+    process.exit(1);
+}
 
 const bot = new Telegraf(BOT_TOKEN);
 
-// Comando /start
 bot.start((ctx) => {
     ctx.reply(
-        "Benvenuto! 👟\nPremi il pulsante sotto per aprire il catalogo:",
+        "Benvenuto! Premi il pulsante per aprire il catalogo 👇",
         {
             reply_markup: {
                 inline_keyboard: [
@@ -28,4 +34,5 @@ bot.start((ctx) => {
 });
 
 bot.launch();
-console.log("Bot su Render avviato con successo!");
+
+console.log("✅ BOT AVVIATO SU RENDER");
