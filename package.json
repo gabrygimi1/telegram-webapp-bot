@@ -7,6 +7,8 @@
     "start": "node bot.js"
   },
   "dependencies": {
-    "telegraf": "^4.12.2"
+    "@supabase/supabase-js": "^2.48.0",
+    "express": "^4.19.2",
+    "telegraf": "^4.16.3"
   }
 }
