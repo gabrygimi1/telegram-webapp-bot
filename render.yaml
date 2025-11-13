@@ -1,8 +1,1 @@
-services:
-  - type: worker
-    name: telegram-webapp-bot
-    env: node
-    region: frankfurt
-    plan: free
-    buildCommand: "npm install"
-    startCommand: "npm start"
+
